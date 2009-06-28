@@ -1,0 +1,5 @@
+Auth backend for REU database
+
+====== Installation ======
+
+Copy reu.class.php to ~dokuwiki/inc/auth/
