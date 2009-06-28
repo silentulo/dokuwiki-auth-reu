@@ -2,4 +2,8 @@ Auth backend for REU database
 
 ====== Installation ======
 
-Copy reu.class.php to ~dokuwiki/inc/auth/
+1. Copy reu.class.php to ~dokuwiki/inc/auth/
+
+2. Copy reu.conf.php.example to ~/dokuwiki/conf/reu.conf.php and edit it
+
+3. Add require_once('reu.conf.php'); to your local.protected.php (not to local.php)

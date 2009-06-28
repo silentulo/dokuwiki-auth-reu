@@ -1,0 +1,17 @@
+<?php
+/*
+ * This is an example configuration for the reu auth module.
+ *
+ * To use this configuration you have to copy them to local.php
+ * or at least include this file in local.php.
+ */
+
+$conf['auth']['reu']['server']   = '';
+$conf['auth']['reu']['user']     = '';
+$conf['auth']['reu']['password'] = '';
+$conf['auth']['reu']['database'] = '';
+
+/* This option enables debug messages in the mysql module. It is
+ * mostly usefull for system admins.
+ */
+$conf['auth']['reu']['debug'] = 0;
