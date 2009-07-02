@@ -7,7 +7,7 @@
 */
 
 define('DOKU_AUTH', dirname(__FILE__));
-require_once(DOKU_AUTH.'/basic.class.php');
+//require_once(DOKU_AUTH.'/basic.class.php');
 
 class auth_reu extends auth_basic {
 
