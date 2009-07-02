@@ -193,6 +193,28 @@ class auth_reu extends auth_basic {
 		return $resultarray;
 	}
 
+	/**
+	 * Escape a string for insertion into the database
+	 *
+	 * @param  string  $string The string to escape
+	 * @param  boolean $like   Escape wildcard chars as well?
+	 *
+	 * @author Andreas Gohr <andi@splitbrain.org>
+	 */
+	function _escape($string,$like=false){
+		if($this->dbcon){
+			$string = mysql_real_escape_string($string, $this->dbcon);
+		}else{
+			$string = addslashes($string);
+		}
+
+		if($like){
+			$string = addcslashes($string,'%_');
+		}
+
+		return $string;
+	}
+
 
 	/**************************************
 	 *  DB QUERIES
