@@ -87,7 +87,7 @@ class auth_reu extends auth_basic {
 		if(!$this->_openDB())
 			return false;
 
-		my $res = $this->_queryCheckPass($user, $pass);
+		$res = $this->_queryCheckPass($user, $pass);
 		$this->_closeDB();
 
 		return $res;
@@ -228,12 +228,12 @@ class auth_reu extends auth_basic {
 	 */
 	function _queryCheckPass ($user, $pass) {
 		// Get hash
-		$phash =  $this->_cryptPassword($pass)
+		$phash =  $this->_cryptPassword($pass);
 
 		// Construct SQL
-		$sql = sprintf ('SELECT kodo FROM `membr` as m ' .
-		                'WHERE svorto = "%s" and pvorto = "%s"',
-		                $this->escape($user), $this->escape($phash));
+		$sql = 'SELECT kodo FROM `membr` as m'
+		       . ' WHERE svorto = "'.$this->_escape($user).'" '
+		       . '       and pvorto = "'.$this->_escape($phash).'"';
 
 		// Query
 		$result = $this->_queryDB($sql);
